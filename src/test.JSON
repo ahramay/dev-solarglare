@@ -1,0 +1,73 @@
+{
+    "dataset": {
+      "tilted_pv_areas": [
+        {
+          "points": [
+            {
+              "longitude": 10.123,
+              "latitude": 20.456,
+              "ground_elevation": 100.0,
+              "height_above_ground": 5.0
+            },
+            {
+              "longitude": 10.234,
+              "latitude": 20.567,
+              "ground_elevation": 105.0,
+              "height_above_ground": 5.5
+            },
+            {
+              "longitude": 10.345,
+              "latitude": 20.678,
+              "ground_elevation": 110.0,
+              "height_above_ground": 6.0
+            },
+            {
+              "longitude": 10.456,
+              "latitude": 20.789,
+              "ground_elevation": 115.0,
+              "height_above_ground": 6.5
+            }
+          ],
+          "tilt": 30,
+          "azimuth": 180
+        }
+      ],
+      "vertical_pv_areas": [
+        {
+          "points": [
+            {
+              "longitude": 11.123,
+              "latitude": 21.456,
+              "ground_elevation": 150.0,
+              "height_above_ground": "VALUE ENTERED BY USER OF LOWER EDGE TO GROUND  10.5"
+            },
+            {
+              "longitude": 11.234,
+              "latitude": 21.567,
+              "ground_elevation": 155.0,
+              "height_above_ground": "VALUE ENTERED BY USER OF LOWER EDGE TO GROUND  10.5"
+            }
+          ],
+          "height_upper_edge":"VALUE ENTERED BY USER",
+          "height_lower_edge":"VALUE ENTERED BY USER OF LOWER EDGE TO GROUND 10.5",
+          "tilt":"ANGLE",
+          "tilt": 90,
+          "azimuth": 90
+        }
+      ],
+      "observation_points": [
+        {
+          "longitude": 12.123,
+          "latitude": 22.456,
+          "ground_elevation": 200.0,
+          "height_above_ground": 15.0
+        },
+        {
+          "longitude": 12.789,
+          "latitude": 22.101,
+          "ground_elevation": 210.0,
+          "height_above_ground": 14.5
+        }
+      ]
+    }
+  }

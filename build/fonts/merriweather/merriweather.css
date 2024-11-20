@@ -1,0 +1,71 @@
+@font-face {
+    font-family: MerriweatherBold;
+    font-style: normal;
+    src: url(./MerriweatherSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherBoldItalik;
+    font-style: normal;
+    src: url(./MerriweatherSans-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherExtraBold;
+    font-style: normal;
+    src: url(./MerriweatherSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherExtraBoldItalic;
+    font-style: normal;
+    src: url(./MerriweatherSans-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherItalic;
+    font-style: normal;
+    src: url(./MerriweatherSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherLight;
+    font-style: normal;
+    src: url(./MerriweatherSans-Light.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherLightItalic;
+    font-style: normal;
+    src: url(./MerriweatherSans-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherMedium;
+    font-style: normal;
+    src: url(./MerriweatherSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherMediumItalic;
+    font-style: normal;
+    src: url(./MerriweatherSans-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherRegular;
+    font-style: normal;
+    src: url(./MerriweatherSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherSemiBold;
+    font-style: normal;
+    src: url(./MerriweatherSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: MerriweatherSemiBoldItalic;
+    font-style: normal;
+    src: url(./MerriweatherSans-SemiBoldItalic.ttf);
+}
