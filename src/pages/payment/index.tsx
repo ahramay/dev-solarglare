@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : 
+    * @group            : 
+    * @created          : 08/11/2024 - 23:17:58
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 08/11/2024
+    * - Author          : 
+    * - Modification    : 
+**/
 import React, { useEffect, useState } from "react";
 import CheckoutForm from "../../components/pages/checkoutForm";
 import Navbar from "../../components/shared/navbar";
@@ -13,6 +25,7 @@ const Payment: React.FC = () => {
   useEffect(() => {
     const fetchStripePromise = async () => {
       const stripe = await loadStripe("pk_live_51OclhHFOvck8PfBnVyC2XXKoUe1Ov7E0YOkFvA2sag2jCUWl6bbKtpnCMAxAdKtop5wD3jcAgKEBGyuPr2uE019900Lcym8nz1");
+      console.log(stripe)
       setStripePromise(stripe);
     };
 
