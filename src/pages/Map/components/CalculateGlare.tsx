@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : 
+    * @group            : 
+    * @created          : 06/11/2024 - 00:20:16
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 06/11/2024
+    * - Author          : 
+    * - Modification    : 
+**/
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store";
@@ -20,6 +32,7 @@ const CalculateGlare: React.FC = () => {
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const location = useLocation();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const tiltedPolygons = useSelector(
     (state: RootState) => state.bmap.tiltedPolygons
@@ -305,6 +318,7 @@ const CalculateGlare: React.FC = () => {
         longitude: value.lng,
         }));
       });
+      console.log("pv_Area",tiltedPVAreas)
       const raw = JSON.stringify({
         identifier: simValue,
         pv_areas: [...tiltedPVAreas, ...verticalPVAreas],
@@ -361,7 +375,7 @@ const CalculateGlare: React.FC = () => {
           redirect: "follow",
         };
         console.log(raw);
-        await fetch("https://solarglare.work/getPDF", requestOptions);
+        await fetch("https://solarglare.work/generate_reports", requestOptions);
       });
     } catch (error) {
       console.error("Failed to Retrieve PDF:", error);

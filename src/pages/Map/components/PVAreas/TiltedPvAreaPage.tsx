@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : 
+    * @group            : 
+    * @created          : 06/11/2024 - 13:39:19
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 06/11/2024
+    * - Author          : 
+    * - Modification    : 
+**/
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
@@ -179,6 +191,7 @@ const TiltedPvAreaPage: React.FC<{ projectName: string }> = ({
 
               const azimuth = JSON.stringify(result);
               azimuthDataArray.push({ azimuth, polygonData: allPolygonData });
+              localStorage.setItem("AzimuthDataArray", JSON.stringify(azimuthDataArray));
             } catch (err) {
               console.log(`Error fetching azimuth data for polygon ${i}:`, err);
             }
@@ -301,12 +314,12 @@ const TiltedPvAreaPage: React.FC<{ projectName: string }> = ({
     dispatch(deleteTiltedSwap({ index }));
     dispatch(removeTiltedAverageElevation({ index }));
     dispatch(deleteTiltedAzimuthValue({ index }));
-    const azimuthDataArray = localStorage.getItem("AzimuthDataArray");
-    if (azimuthDataArray) {
-      const parsedData = JSON.parse(azimuthDataArray);
-      parsedData.splice(index, 1);
-      localStorage.setItem("AzimuthDataArray", JSON.stringify(parsedData));
-    }
+    // const azimuthDataArray = localStorage.getItem("AzimuthDataArray");
+    // if (azimuthDataArray) {
+    //   const parsedData = JSON.parse(azimuthDataArray);
+    //   parsedData.splice(index, 1);
+    //   localStorage.setItem("AzimuthDataArray", JSON.stringify(parsedData));
+    // }
     dispatch(deleteTiltedchecked({ index }));
     dispatch(removeSlopeArea(index));
     pointElevations.splice(index, 1);
