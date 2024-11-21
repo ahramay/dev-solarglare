@@ -24,7 +24,7 @@ const Payment: React.FC = () => {
   const clientSecret = location?.state?.clientSecret;
   useEffect(() => {
     const fetchStripePromise = async () => {
-      const stripe = await loadStripe("pk_live_51OclhHFOvck8PfBnVyC2XXKoUe1Ov7E0YOkFvA2sag2jCUWl6bbKtpnCMAxAdKtop5wD3jcAgKEBGyuPr2uE019900Lcym8nz1");
+      const stripe = await loadStripe("pk_test_51OclhHFOvck8PfBnKGlKqGqDCa7pMPqaMb5HnYhGSSs4mjDA9Rfyo9782sxGmWCs2sVkevFeuFX6bNHQ46CIpug000A7qfW3JY");
       console.log(stripe)
       setStripePromise(stripe);
     };
