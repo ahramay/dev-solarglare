@@ -169,7 +169,7 @@ const TiltedPvAreaPage: React.FC<{ projectName: string }> = ({
 
             try {
               const response = await axios.put(
-                "https://solarglare.work/azimuth/",
+                "https://dev.solarglare.work/azimuth/",
                 allPolygonData,
                 {
                   headers: {

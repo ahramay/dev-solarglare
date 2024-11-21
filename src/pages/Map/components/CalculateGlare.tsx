@@ -375,7 +375,7 @@ const CalculateGlare: React.FC = () => {
           redirect: "follow",
         };
         console.log(raw);
-        await fetch("https://solarglare.work/generate_reports", requestOptions);
+        await fetch("https://dev.solarglare.work/generate_reports", requestOptions);
       });
     } catch (error) {
       console.error("Failed to Retrieve PDF:", error);

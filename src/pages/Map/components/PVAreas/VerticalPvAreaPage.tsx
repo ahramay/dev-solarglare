@@ -218,7 +218,7 @@ const VerticalPvAreaPage: React.FC<{ projectName: string }> = ({
         if (verticalLowerHeight[i] != null && verticalUpperHeight[i] != null && checkedAzimuth[i] === true) {
           try {
             const response = await axios.put(
-              "https://solarglare.work/azimuth/",
+              "https://dev.solarglare.work/azimuth/",
               JSON.stringify(result),
               {
                 headers: {

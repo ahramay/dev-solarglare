@@ -91,7 +91,7 @@ class NetworkService {
   };
   getPDF = async (data: any): Promise<any> => {
     // const apiUrl = `https://solar-glare.onrender.com/getPDF`;
-    const apiUrl = `https://solarglare.work/getPDF`;
+    const apiUrl = `https://dev.solarglare.work/getPDF`;
     try {
       const pdf = await this.getPdf(apiUrl, data);
       return pdf;

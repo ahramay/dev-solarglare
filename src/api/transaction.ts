@@ -3,7 +3,7 @@ export const api = {
   fetchClientSecret: async (data:{amount: number}) => {
     try {
       const response = await axios.post(
-        `https://solar-stripe-backend.onrender.com/transaction`,
+        `https://stripe.solarglare.work/transaction`,
         data
       );
 
@@ -15,7 +15,7 @@ export const api = {
   fetchCouponDetails: async (data:{couponID:string,originalAmount:number,paymentIntent_ID:string}) => {
     try {
       const response = await axios.post(
-        `https://solar-stripe-backend.onrender.com/get_coupon`,
+        `https://stripe.solarglare.work/get_coupon`,
         data
       );
 
