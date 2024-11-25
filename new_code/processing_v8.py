@@ -1054,7 +1054,7 @@ def plot_glare_data(df_aggregated, output_dir, timestamp, list_of_dps, utc_offse
         ax.set_title(f'Glare Periods for DP {op_number}')
 
         legend = ax.legend()
-        for handle in legend.legendHandles:
+        for handle in legend.legend_handles:
             handle._sizes = [30]
 
         ax.grid(True, linestyle='--', linewidth=0.5)
