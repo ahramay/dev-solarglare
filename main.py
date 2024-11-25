@@ -41,7 +41,8 @@ origins = [
     "http://solar-glare-web.vercel.app",
     "https://app.pv-glarecheck.com",
     "http://app.pv-glarecheck.com",
-    "http://13.49.18.177/"
+    "http://13.49.18.177/",
+    "https://dev-solarglare.vercel.app"
 ]
 
 # -*- coding: utf-8 -*-
