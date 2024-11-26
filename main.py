@@ -109,14 +109,18 @@ def calculate_azimuth(lat1, lon1, lat2, lon2):
     return azimuth
 
 
-# Function to calculate the PV azimuth
+def angular_difference(angle1, angle2):
+    diff = (angle1 - angle2 + 180) % 360 - 180
+    return abs(diff)
+
+
 def calculate_pv_azimuth(points):
     # Find points with the tag "upper_edge"
     upper_edges = [p for p in points if p.tag == "upper_edge"]
 
     # Ensure exactly two "upper_edge" points exist
     if len(upper_edges) != 2:
-        raise ValueError("There must be exactly two points with the tag 'upper_edge'. and two with 'lower_edge' ")
+        raise ValueError("There must be exactly two points with the tag 'upper_edge'.")
 
     # Calculate the azimuth angle between the two "upper_edge" points
     edge_orientation = calculate_azimuth(upper_edges[0].lat, upper_edges[0].lon,
@@ -129,15 +133,44 @@ def calculate_pv_azimuth(points):
             azimuth = calculate_azimuth(upper_edges[0].lat, upper_edges[0].lon, point.lat, point.lon)
             azimuths_to_other_points.append(azimuth)
 
-    # Check if both azimuths are within the range of edge_orientation - 90°
-    # (in code it is 95 to have a bit error tolerance if we dont have perfect 90° angles)
-    # here it is important that the user is only allowed to draw rectangles (or lines)
+    # Adjust angular difference calculation for tolerance
     for azimuth in azimuths_to_other_points:
-        diff = (azimuth - (edge_orientation - 95)) % 360
-        if not (0 <= diff <= 180):
+        if angular_difference(azimuth, edge_orientation - 90) > 5:
             return (edge_orientation + 90) % 360
 
     return (edge_orientation - 90) % 360
+
+
+# ************************************** OLD FUNCTION *********************************
+# Function to calculate the PV azimuth
+# def calculate_pv_azimuth(points):
+#     # Find points with the tag "upper_edge"
+#     upper_edges = [p for p in points if p.tag == "upper_edge"]
+#
+#     # Ensure exactly two "upper_edge" points exist
+#     if len(upper_edges) != 2:
+#         raise ValueError("There must be exactly two points with the tag 'upper_edge'. and two with 'lower_edge' ")
+#
+#     # Calculate the azimuth angle between the two "upper_edge" points
+#     edge_orientation = calculate_azimuth(upper_edges[0].lat, upper_edges[0].lon,
+#                                          upper_edges[1].lat, upper_edges[1].lon)
+#
+#     # Calculate azimuths to the other points
+#     azimuths_to_other_points = []
+#     for point in points:
+#         if point.tag != "upper_edge":
+#             azimuth = calculate_azimuth(upper_edges[0].lat, upper_edges[0].lon, point.lat, point.lon)
+#             azimuths_to_other_points.append(azimuth)
+#
+#     # Check if both azimuths are within the range of edge_orientation - 90°
+#     # (in code it is 95 to have a bit error tolerance if we dont have perfect 90° angles)
+#     # here it is important that the user is only allowed to draw rectangles (or lines)
+#     for azimuth in azimuths_to_other_points:
+#         diff = (azimuth - (edge_orientation - 95)) % 360
+#         if not (0 <= diff <= 180):
+#             return (edge_orientation + 90) % 360
+#
+#     return (edge_orientation - 90) % 360
 
 
 def remove_folder(folder_name):
