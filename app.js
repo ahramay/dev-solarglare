@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : 
+    * @group            : 
+    * @created          : 27/11/2024 - 01:52:04
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 27/11/2024
+    * - Author          : 
+    * - Modification    : 
+**/
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -9,6 +21,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://app.pv-glarecheck.com",
+  "https://dev-solarglare.vercel.app",
 ];
 app.use(
   cors({
